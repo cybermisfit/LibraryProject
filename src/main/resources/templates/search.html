@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <title>List All CDs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <th:block th:insert="base :: header"></th:block>
+</head>
+<body>
+<div th:replace="base :: nav"></div>
+<form action="#" th:action="@{/process2}"  method="get">
+    <div class="container" >
+        <table class="table table-borderless" style="margin-top: 50px">
+            <th>Category</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Author/Artist</th>
+            <th>Year Released</th>
+            <th>Genre</th>
+            <th>Call Number</th>
+
+            <tr th:each="process : ${process}">
+
+                <td > <span th:text="${process.category}"></span><br/></td>
+                <td > <span th:text="${process.title}"></span><br/></td>
+                <td > <span th:text="${process.description}"></span><br/></td>
+                <td > <span th:text="${process.author_artist}"></span><br/></td>
+                <td > <span th:text="${process.yearreleased}"></span><br/></td>
+                <td > <span th:text="${process.genre}"></span><br/></td>
+                <td > <span th:text="${process.callnumber}"></span><br/></td>
+
+
+                <!--<td > <span th:text="${process.cost}"></span><br/></td>-->
+                <!--<td > <span th:text="${process.availablecopies}"></span><br/></td>-->
+
+
+        </table>
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <title>Admin Product Form</title>
+    <th:block th:insert="base :: header"></th:block>
+</head>
+
+<body>
+<div th:replace="base :: navlinks"></div>
+
+<h2>Admin Library Form</h2>
+
+<form action="#" th:action="@{/process}" th:object="${product}" method="post">
+    <input type="hidden" th:field="*{id}" />
+
+    Category :<select th:field="*{category}">
+    <option th:value="'Book'" th:text="Book"></option>
+    <option th:value="'DVD'" th:text="DVD"></option>
+    <option th:value="'CD'" th:text="CD"></option>
+    </select><br />
+
+    Title :<input type="text" th:field="*{title}" />
+    <span th:if="${#fields.hasErrors('title')}"
+          th:errors="*{title}"></span><br />
+
+    Description :<textarea rows="3" th:field="*{description}" />
+    <span th:if="${#fields.hasErrors('description')}"
+          th:errors="*{description}"></span><br />
+
+    Author/Artist :<input type="text" th:field="*{author_artist}" />
+    <span th:if="${#fields.hasErrors('author_artist')}"
+          th:errors="*{author_artist}"></span><br />
+
+    Year Released :<input type="text" th:field="*{yearreleased}" />
+    <span th:if="${#fields.hasErrors('yearreleased')}"
+          th:errors="*{yearreleased}"></span><br />
+
+    Genre :<input type="text" th:field="*{genre}" />
+    <span th:if="${#fields.hasErrors('genre')}"
+          th:errors="*{genre}"></span><br />
+
+    Call Number :<input type="text" th:field="*{callnumber}" />
+    <span th:if="${#fields.hasErrors('callnumber')}"
+          th:errors="*{callnumber}"></span><br />
+
+    <!--Cost :<input type="text" th:field="*{cost}" />-->
+    <!--<cost th:if="${#fields.hasErrors('cost')}"-->
+          <!--th:errors="*{cost}"></cost><br />-->
+    <br />
+
+    <input type="submit" value="Submit" />
+
+</form>
+</body>
+</html>

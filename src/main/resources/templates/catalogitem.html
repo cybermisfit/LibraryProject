@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <title>Product Information</title>
+    <th:block th:insert="base :: header"></th:block>
+</head>
+<body>
+<div th:replace="base :: navlinks"></div>
+
+<a href="/admincatalog">Return to Admin Catalog</a><br />
+<br/>
+
+Category: <span th:text="${product.category}" ></span><br />
+Title: <span th:text="${product.title}" ></span><br />
+Description: <span th:text="${product.description}"></span><br/>
+Author/Artist: <span th:text="${product.author_artist}" ></span><br />
+Year Released: <span th:text="${product.yearreleased}" ></span><br />
+Call Number: <span th:text="${product.callnumber}" ></span><br />
+<!--Cost: <span th:text="${product.cost}" ></span><br />-->
+
+<br/>
+<a th:href="@{/delete/{id}(id=${product.id})}">Delete this item</a>
+</body>
+</html>

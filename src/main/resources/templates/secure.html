@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org" xmlns:sec="www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Secure Page</title>
+    <th:block th:insert="base :: header"></th:block>
+</head>
+<body>
+<div th:replace="base :: navlinks"></div>
+
+<!--<h2>Secure Page</h2>-->
+<div>Hi [[${user.firstName}]]!</div>
+<div sec:authorize="hasAuthority('ADMIN')">
+    Administrator access only.
+</div>
+<div sec:authorize="hasAuthority('STUDENT')">
+    Welcome to the Fake Library.
+</div>
+</body>
+</html>
