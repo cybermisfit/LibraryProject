@@ -3,6 +3,7 @@ package com.example.springbootsecurity;
 import javax.persistence.*;
 import java.util.Collection;
 
+
 @Entity
 @Table(name="STUDENT_DATA")
 public class Student {
@@ -32,6 +33,10 @@ public class Student {
     @JoinTable(joinColumns = @JoinColumn(name="student_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Collection<Role> roles;
+
+    @OneToMany
+    @JoinColumn(name = "product_id")
+    public Collection<Product> products;
 
     public Student(String email, String password, String firstName, String lastName, boolean enabled, String username) {
         this.email = email;
@@ -109,4 +114,12 @@ public class Student {
         this.roles = roles;
     }
 
+
+    public Collection<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(Collection<Product> products) {
+        this.products = products;
+    }
 }

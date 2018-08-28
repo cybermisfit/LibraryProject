@@ -1,6 +1,8 @@
 package com.example.springbootsecurity;
 
 import javax.persistence.*;
+import java.util.Collection;
+
 
 
 @Entity
@@ -31,17 +33,23 @@ public class Product {
     @Column(name="callnumber")
     private String callnumber;
 
-//    @Column(name="cost")
-//    private double cost;
+//    @Column(name="dateborrowed")
+//    private String dateborrowed;
+//
+//    @Column(name = "datereturned")
+//    private String datereturned;
 
-//    @Column(name="available")
-//    private boolean available;
-//
-//    @Column(name = "datecheckout")
-//    private String datecheckout;
-//
-//    @Column(name = "duedate")
-//    private String duedate;
+    @Column(name="available")
+    private int available;
+
+    @Column(name = "username")
+    private String username;
+
+
+//    @ManyToOne
+//    @JoinColumn(name = "student_id")
+//    private Student student;
+
 
     public long getId() {
         return id;
@@ -107,37 +115,45 @@ public class Product {
         this.callnumber = callnumber;
     }
 
-//    public double getCost() {
-//        return cost;
+//    public String getDateborrowed() {
+//        return dateborrowed;
 //    }
 //
-//    public void setCost(double cost) {
-//        this.cost = cost;
+//    public void setDateborrowed(String dateborrowed) {
+//        this.dateborrowed = dateborrowed;
+//    }
+//
+//    public String getDatereturned() {
+//        return datereturned;
+//    }
+//
+//    public void setDatereturned(String datereturned) {
+//        this.datereturned = datereturned;
 //    }
 
-//    public boolean isAvailable() {
-//        return available;
+    public int getAvailable() {
+        return available;
+    }
+
+    public void setAvailable(int available) {
+        this.available = available;
+    }
+
+//    public Student getStudent() {
+//        return student;
 //    }
 //
-//    public void setAvailable(boolean available) {
-//        this.available = available;
-//    }
-//
-//    public String getDatecheckout() {
-//        return datecheckout;
-//    }
-//
-//    public void setDatecheckout(String datecheckout) {
-//        this.datecheckout = datecheckout;
-//    }
-//
-//    public String getDuedate() {
-//        return duedate;
-//    }
-//
-//    public void setDuedate(String duedate) {
-//        this.duedate = duedate;
+//    public void setStudent(Student student) {
+//        this.student = student;
 //    }
 
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 }
 

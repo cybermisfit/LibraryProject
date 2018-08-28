@@ -27,6 +27,10 @@ public class HomeController {
     @Autowired
     RoleRepository roleRepository;
 
+
+
+    //////////////REGISTER & LOGIN
+
     @GetMapping("/register")
     public String showRegistrationPage(Model model) {
         model.addAttribute("student", new Student());
@@ -65,6 +69,9 @@ public class HomeController {
         return "secure";
     }
 
+    ////////////CATALOGS AND SEARCH CATALOG
+
+
     @RequestMapping("/catalog")
     public String homeCatalog(Model model) {
         model.addAttribute("products", productRepository.findAll());
@@ -77,6 +84,15 @@ public class HomeController {
         return "admincatalog";
     }
 
+    @PostMapping("/process2")
+    public String searchCatalog(@RequestParam("search") String searchTerm, Model model) {
+        model.addAttribute("process", productRepository.findBySearchTermNative(searchTerm));
+        return "search";
+    }
+
+
+    ///////////ADMIN ADD PRODUCT SECTION
+
     @GetMapping("/add")
     public String addProduct(Model model){
         model.addAttribute("product", new Product());
@@ -88,6 +104,8 @@ public class HomeController {
         if (result.hasErrors()){
             return "adminform";
         }
+        //set boolean value here, set.available as true
+        product.setAvailable(1);
         productRepository.save(product);
         return "redirect:/admincatalog";
     }
@@ -107,19 +125,41 @@ public class HomeController {
         return "redirect:/admincatalog";
     }
 
-    @PostMapping("/process2")
-    public String searchtitle(@RequestParam("search") String searchTerm, String genre, Model model) {
-        model.addAttribute("process", productRepository.findBySearchTermNative(searchTerm));
-//        model.addAttribute("process", productRepository.findByGenre(genre));
-        return "search";
+
+
+    ///////CHECKOUT
+
+    @GetMapping("/checkout")
+    public String checkoutProduct(Model model){
+        model.addAttribute("product", new Product());
+        model.addAttribute("products", productRepository.findAll());
+        model.addAttribute("student", userService.getCurrentUser());
+        return "checkout";
     }
-//
-//    @PostMapping("/searchlibcat")
-//    public String searchLibraryCatalog(String category, Model model){
-//        model.addAttribute("products",productRepository.findAllByCategory(category));
-//
-//        return "/";
-//    }
+
+    @PostMapping("/processout")
+    public String processCheckoutForm(@Valid Product product, BindingResult result){
+        if (result.hasErrors()){
+            return "checkout";
+        }
+        //set boolean value here, set.available as false
+        String username = userService.getCurrentUser().getUsername();
+        product.setUsername(username);
+        product.setAvailable(0);
+        productRepository.save(product);
+        return "redirect:/checkoutinfo";
+    }
+
+    @RequestMapping("/checkoutinfo")
+    public String checkoutInfo(Model model){
+        String username = userService.getCurrentUser().getUsername();
+        model.addAttribute("products", productRepository.findByUsername(username));
+        return "checkoutinfo";
+    }
+
+
+
+
 
 }
 

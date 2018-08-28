@@ -8,7 +8,7 @@
 <div th:replace="base :: navlinks"></div>
 <h2>New User Register</h2>
 <form autocomplete="off" action="#" th:action="@{/register}"
-      th:object="${user}" method="post">
+      th:object="${student}" method="post">
     First Name<mark><strong>
     <span th:if="${#fields.hasErrors('firstName')}"
           th:errors="*{firstName}">First Name Error</span>

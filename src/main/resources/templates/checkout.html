@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <title>Admin Product Form</title>
+    <th:block th:insert="base :: header"></th:block>
+</head>
+
+<body>
+<div th:replace="base :: navlinks"></div>
+
+<h2>Checkout Form</h2>
+
+<form action="#" th:action="@{/processout}" th:object="${product}" method="post">
+    <!--<input type="hidden" th:field="*{id}" />-->
+
+    <!--Category :<select th:field="*{category}">-->
+    <!--<option th:value="'Book'" th:text="Book"></option>-->
+    <!--<option th:value="'DVD'" th:text="DVD"></option>-->
+    <!--<option th:value="'CD'" th:text="CD"></option>-->
+<!--</select><br />-->
+
+    Title : <select name="product" id="product" class="custom-select">
+    <option value="">Select Title</option>
+    <option th:each="product : ${products}" th:value="${product.id}" th:text="${product.title}"></option>
+    </select>
+
+    <!--UserName : <td th:text="${product.username}"></td>-->
+
+
+<br/>
+    <input type="submit" value="Submit" />
+
+</form>
+</body>
+</html>

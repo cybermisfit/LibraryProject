@@ -8,26 +8,7 @@
 
 <div th:replace="base :: navlinks"></div>
 
-<!--Category :<select th:field="*{category}">-->
-    <!--<option th:value="'Book'" th:text="Book"></option>-->
-    <!--<option th:value="'DVD'" th:text="DVD"></option>-->
-    <!--<option th:value="'CD'" th:text="CD"></option>-->
 
-<!--</select><br />-->
-
-<!--<br/>-->
-<center>
-<form action="#"  th:action="@{/process2}" th:object="${process2}" method="post">
-<table>
-    <tr>
-        <td><input   class="form-control" type="text" name="search" /></td>
-        <td>
-            <input class="btn" type="submit" value="Library Search" />
-        </td>
-    </tr>
-</table>
-</form>
-</center>
 
 <table class="table table-borderless" style="margin-top: 50px">
     <tr>
@@ -38,7 +19,7 @@
         <th>Year Released</th>
         <th>Genre</th>
         <th>Call Number</th>
-        <!--<th>Available</th>-->
+        <th>Available</th>
         <!--<th>Checked Out</th>-->
         <!--<th>Due Date</th>-->
 
@@ -51,15 +32,8 @@
         <td th:text="${product.yearreleased}"></td>
         <td th:text="${product.genre}"></td>
         <td th:text="${product.callnumber}"></td>
-        <!--<td th:text="${product.available}"></td>-->
+        <td th:text="${product.available}"></td>
 
-
-
-        <!--<td>-->
-            <!--<a th:href="@{/update/{id}(id=${message.id})}">Update</a>   - -->
-            <!--&lt;!&ndash;<a th:href="@{/detail/{id}(id=${message.id})}">Details</a>&ndash;&gt;-->
-            <!--&lt;!&ndash;<a th:href="@{/delete/{id}(id=${message.id})}">Delete</a>&ndash;&gt;-->
-        <!--</td>-->
     </tr>
 </table>
 

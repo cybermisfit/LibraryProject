@@ -8,18 +8,6 @@
 
 <div th:replace="base :: navlinks"></div>
 
-<center>
-    <form action="#"  th:action="@{/process2}" th:object="${process2}" method="post">
-        <table>
-            <tr>
-                <td><input   class="form-control" type="text" name="search" /></td>
-                <td>
-                    <input class="btn" type="submit" value="Library Search" />
-                </td>
-            </tr>
-        </table>
-    </form>
-</center>
 
 <table class="table table-borderless" style="margin-top: 50px">
     <tr>
@@ -30,9 +18,10 @@
         <th>Year Released</th>
         <th>Genre</th>
         <th>Call Number</th>
+        <th>Available</th>
         <!--<th>Cost</th>-->
         <th>Action</th>
-        <!--<th>Available</th>-->
+
         <!--<th>Due Date</th>-->
 
     </tr>
@@ -45,7 +34,7 @@
         <td th:text="${product.genre}"></td>
         <td th:text="${product.callnumber}"></td>
         <!--<td th:text="${product.cost}"></td>-->
-        <!--<td th:text="${product.available}"></td>-->
+        <td th:text="${product.available}"></td>
         <!--<td th:text="${product.duedate}"></td>-->
 
 

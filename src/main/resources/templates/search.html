@@ -17,6 +17,7 @@
             <th>Year Released</th>
             <th>Genre</th>
             <th>Call Number</th>
+            <th>Available</th>
 
             <tr th:each="process : ${process}">
 
@@ -27,10 +28,7 @@
                 <td > <span th:text="${process.yearreleased}"></span><br/></td>
                 <td > <span th:text="${process.genre}"></span><br/></td>
                 <td > <span th:text="${process.callnumber}"></span><br/></td>
-
-
-                <!--<td > <span th:text="${process.cost}"></span><br/></td>-->
-                <!--<td > <span th:text="${process.availablecopies}"></span><br/></td>-->
+                <td > <span th:text="${process.available}"></span><br/></td>
 
 
         </table>

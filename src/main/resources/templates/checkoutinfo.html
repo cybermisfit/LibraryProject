@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <title>Checkout Information</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <th:block th:insert="base :: header"></th:block>
+</head>
+<body>
+<div th:replace="base :: nav"></div>
+
+<form action="#" th:action="@{/checkoutinfo}" th:object="${product}"  method="post">
+
+    <div class="container" >
+        <table class="table table-borderless" style="margin-top: 50px">
+            <tr>
+                <th>Book Title</th>
+                <th>User Name</th>
+            </tr>
+
+            <tr th:each="product : ${products}">
+
+                <td >  <span th:text="${product.title}"></span><br/></td>
+                <td > <span th:text="${product.username}"></span><br/></td>
+            </tr>
+
+        </table>
+    </div>
+</form>
+</body>
+</html>

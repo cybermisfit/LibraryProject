@@ -16,7 +16,7 @@ Description: <span th:text="${product.description}"></span><br/>
 Author/Artist: <span th:text="${product.author_artist}" ></span><br />
 Year Released: <span th:text="${product.yearreleased}" ></span><br />
 Call Number: <span th:text="${product.callnumber}" ></span><br />
-<!--Cost: <span th:text="${product.cost}" ></span><br />-->
+Available: <span th:text="${product.available}" ></span><br />
 
 <br/>
 <a th:href="@{/delete/{id}(id=${product.id})}">Delete this item</a>
