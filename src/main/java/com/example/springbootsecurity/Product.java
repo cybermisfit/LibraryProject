@@ -33,17 +33,11 @@ public class Product {
     @Column(name="callnumber")
     private String callnumber;
 
-//    @Column(name="dateborrowed")
-//    private String dateborrowed;
-//
-//    @Column(name = "datereturned")
-//    private String datereturned;
-
-    @Column(name="available")
-    private int available;
-
     @Column(name = "username")
     private String username;
+
+    @Column(name="available")
+    private boolean available;
 
 
 //    @ManyToOne
@@ -115,45 +109,20 @@ public class Product {
         this.callnumber = callnumber;
     }
 
-//    public String getDateborrowed() {
-//        return dateborrowed;
-//    }
-//
-//    public void setDateborrowed(String dateborrowed) {
-//        this.dateborrowed = dateborrowed;
-//    }
-//
-//    public String getDatereturned() {
-//        return datereturned;
-//    }
-//
-//    public void setDatereturned(String datereturned) {
-//        this.datereturned = datereturned;
-//    }
-
-    public int getAvailable() {
-        return available;
-    }
-
-    public void setAvailable(int available) {
-        this.available = available;
-    }
-
-//    public Student getStudent() {
-//        return student;
-//    }
-//
-//    public void setStudent(Student student) {
-//        this.student = student;
-//    }
-
-
     public String getUsername() {
         return username;
     }
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public boolean isAvailable() {
+        return available;
+    }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
     }
 }
 

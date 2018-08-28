@@ -26,11 +26,11 @@
 //
 //        roleRepository.save(new Role("STUDENT"));
 //        roleRepository.save(new Role("ADMIN"));
-//        roleRepository.save(new Role("LIBRARIAN"));
+////        roleRepository.save(new Role("LIBRARIAN"));
 //
 //        Role adminRole = roleRepository.findByRole("ADMIN");
 //        Role studentRole = roleRepository.findByRole("STUDENT");
-//        Role librarianRole = roleRepository.findByRole("LIBRARIAN");
+////        Role librarianRole = roleRepository.findByRole("LIBRARIAN");
 //
 //        Student user = new Student("bob@bob.com", "password", "Bob", "Bobberson", true, "bob");
 //        user.setPassword(passwordEncoder.encode(user.getPassword()));
@@ -54,7 +54,7 @@
 //
 //        user = new Student("sue@everylady.com","password","Sue","Johnson",true,"sue");
 //        user.setPassword(passwordEncoder.encode(user.getPassword()));
-//        user.setRoles(Arrays.asList(librarianRole));
+//        user.setRoles(Arrays.asList(studentRole));
 //        studentRepository.save(user);
 //    }
 //}

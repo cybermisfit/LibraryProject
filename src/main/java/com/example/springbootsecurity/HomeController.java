@@ -105,7 +105,7 @@ public class HomeController {
             return "adminform";
         }
         //set boolean value here, set.available as true
-        product.setAvailable(1);
+        product.setAvailable(true);
         productRepository.save(product);
         return "redirect:/admincatalog";
     }
@@ -145,7 +145,7 @@ public class HomeController {
         //set boolean value here, set.available as false
         String username = userService.getCurrentUser().getUsername();
         product.setUsername(username);
-        product.setAvailable(0);
+        product.setAvailable(false);
         productRepository.save(product);
         return "redirect:/checkoutinfo";
     }

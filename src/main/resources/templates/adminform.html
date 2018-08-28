@@ -19,35 +19,33 @@
     <option th:value="'CD'" th:text="CD"></option>
     </select><br />
 
-    Title :<input type="text" th:field="*{title}" />
+    Title: <input type="text" th:field="*{title}" />
     <span th:if="${#fields.hasErrors('title')}"
           th:errors="*{title}"></span><br />
 
-    Description :<textarea rows="3" th:field="*{description}" />
+    Description: <textarea rows="3" th:field="*{description}" />
     <span th:if="${#fields.hasErrors('description')}"
           th:errors="*{description}"></span><br />
 
-    Author/Artist :<input type="text" th:field="*{author_artist}" />
+    Author/Artist: <input type="text" th:field="*{author_artist}" />
     <span th:if="${#fields.hasErrors('author_artist')}"
           th:errors="*{author_artist}"></span><br />
 
-    Year Released :<input type="text" th:field="*{yearreleased}" />
+    Year Released: <input type="text" th:field="*{yearreleased}" />
     <span th:if="${#fields.hasErrors('yearreleased')}"
           th:errors="*{yearreleased}"></span><br />
 
-    Genre :<input type="text" th:field="*{genre}" />
+    Genre: <input type="text" th:field="*{genre}" />
     <span th:if="${#fields.hasErrors('genre')}"
           th:errors="*{genre}"></span><br />
 
-    Call Number :<input type="text" th:field="*{callnumber}" />
+    Call Number: <input type="text" th:field="*{callnumber}" />
     <span th:if="${#fields.hasErrors('callnumber')}"
           th:errors="*{callnumber}"></span><br />
 
-    <!--Available :<input type="text" th:field="*{available}" />-->
-    <!--<available th:if="${#fields.hasErrors('available')}"-->
-          <!--th:errors="*{cost}"></available><br />-->
-    <!--<br />-->
+    Available: <input type="checkbox" th:field="*{available}" th:name="'Available'" th:value="'Available'"><br/>
 
+    <br/>
     <input type="submit" value="Submit" />
 
 </form>
