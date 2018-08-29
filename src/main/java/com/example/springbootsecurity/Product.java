@@ -39,6 +39,21 @@ public class Product {
     @Column(name="available")
     private boolean available;
 
+    public Product(String category, String title, String description, String author_artist, String yearreleased, String genre, String callnumber, String username, boolean available) {
+        this.category = category;
+        this.title = title;
+        this.description = description;
+        this.author_artist = author_artist;
+        this.yearreleased = yearreleased;
+        this.genre = genre;
+        this.callnumber = callnumber;
+        this.username = username;
+        this.available = available;
+    }
+
+    public Product() {
+    }
+
 
 //    @ManyToOne
 //    @JoinColumn(name = "student_id")
