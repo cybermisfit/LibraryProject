@@ -10,10 +10,10 @@
 <!--<h2>Secure Page</h2>-->
 <div>Hi [[${user.firstName}]]!</div>
 <div sec:authorize="hasAuthority('ADMIN')">
-    Administrator access only.
+    Administrator access only. Welcome!
 </div>
 <div sec:authorize="hasAuthority('STUDENT')">
-    Welcome to the Library.
+    Welcome to the Library!
 </div>
 </body>
 </html>
